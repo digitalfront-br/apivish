@@ -13,7 +13,7 @@ class CrudControllerApi extends Controller
 
     public function index()
     {
-        return $this->resources::collection($this->objeto::paginate());
+        return $this->resources::collection($this->objeto::paginate(100));
     }
     public function store(Request $request)
     {
