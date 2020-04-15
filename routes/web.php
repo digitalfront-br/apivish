@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('dashboard', 'Dashboard\\EntidadeController')->names('dash');
+});
+
 Route::get('/', function () {
     return '...';
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
